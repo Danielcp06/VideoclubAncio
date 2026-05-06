@@ -1,4 +1,4 @@
-package controller;
+package domain;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
