@@ -5,12 +5,24 @@ public class Pelicula {
     private int año;
     private String nombre;
     private int precio;
+    private Genero genero;
+    private String etiqueta;
 
-    public Pelicula(String id_pelicula, int año, String nombre, int precio) throws VideoclubException {
+    public Pelicula(String id_pelicula, int año, String nombre, int precio, Genero genero, String etiqueta) throws VideoclubException {
         this.id_pelicula = id_pelicula;
         setAño(año);
         this.nombre = nombre;
         setPrecio(precio);
+        this.genero = genero;
+        this.etiqueta = etiqueta;
+    }
+
+    public String getEtiqueta() {
+        return etiqueta;
+    }
+
+    public Genero getGenero() {
+        return genero;
     }
 
     public String getId_pelicula() {
@@ -25,7 +37,7 @@ public class Pelicula {
         return nombre;
     }
 
-    public int getRecord() {
+    public int getPrecio() {
         return precio;
     }
 
