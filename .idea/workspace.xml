@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1c323427-74b7-4653-9ca8-efaa42972f5b" name="Changes" comment="Main y src">
+      <change afterPath="$PROJECT_DIR$/../AccesoFicheros/AccesoFicheros.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AccesoFicheros/src/Buffer/Ejercicio1/Ejercicio1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AccesoFicheros/src/Buffer/Ejercicio1/leeme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AccesoFicheros/src/Buffer/Ejercicio2/Ejercicio2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaseDatos/src/main/java/Boletin8/Ejercicio2/Ejercicio2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaseDatos/src/main/java/Boletin8/Ejercicio3/Ejercicio3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaseDatos/src/main/java/Boletin8/Ejercicio9/Ejercicio9.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaseDatos/src/main/java/TestConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Examen Colecciones 2026/Examen Colecciones 2026.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Examen Objetos/Examen Objetos.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Examen2023Juguetes/Examen2023Juguetes.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamenHerenciaPolimorfismo2026/ExamenHerenciaPolimorfismo2026.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Geometry Dash/Geometry Dash.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/Herencia.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HolaMundoJava/.idea/HolaMundoJava.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HolaMundoJava1/HolaMundoJava1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IA/IA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IA/ia-competencia.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IA/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IA/src/Asistente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IA/src/IA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Juego RPG/Juego RPG.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Prueba final de Testing avanzado/Prueba final de Testing avanzado.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Validador 1/Validador 1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Validador/Validador.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../debuging Demo/debuging Demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculadora-java-grupo-2" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculadora-java-grupo-2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examen Colecciones 2026/src/app/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Examen Colecciones 2026/src/app/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSon/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JSon/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSon/src/main/java/Mini_Boletin/Ejercicio3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JSon/src/main/java/Mini_Boletin/Ejercicio3/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="1-fase2" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {}
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Danielcp06/VideoclubAncio.git",
+    "accountId": "6baaee36-1297-44cd-b6a2-0948853e2457"
+  },
+  "recentNewPullRequestHead": {
+    "server": {
+      "useHttp": false,
+      "host": "github.com",
+      "port": null,
+      "suffix": null
+    },
+    "owner": "Danielcp06",
+    "repository": "VideoclubAncio"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3DIi5BiofqBo4EsYLKlcLObEV1S" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c323427-74b7-4653-9ca8-efaa42972f5b" name="Changes" comment="" />
+      <created>1777975800741</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1777975800741</updated>
+    </task>
+    <task id="LOCAL-00001" summary="rama develop">
+      <option name="closed" value="true" />
+      <created>1777977031858</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1777977031858</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Main y src">
+      <option name="closed" value="true" />
+      <created>1778050291089</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1778050291089</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="rama develop" />
+    <MESSAGE value="Main y src" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main y src" />
+  </component>
+</project>
