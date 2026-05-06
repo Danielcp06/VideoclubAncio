@@ -5,7 +5,6 @@ public class Pelicula {
     private int año;
     private String nombre;
     private int precio;
-    private
 
     public Pelicula(String id_pelicula, int año, String nombre, int precio) throws VideoclubException {
         this.id_pelicula = id_pelicula;
