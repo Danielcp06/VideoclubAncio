@@ -1,11 +1,14 @@
-package domain;
+package app;
 
+
+import domain.Genero;
+import domain.Pelicula;
+import exception.VideoclubException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model.Pelicula;
 
 public class Main {
 
@@ -16,18 +19,28 @@ public class Main {
     @FXML private TableColumn<Pelicula, Double> colPrecio;
 
     @FXML
+    void main(String[] args) {
+
+        initialize();
+
+    }
     public void initialize() {
-        // Configuramos cómo se vinculan las columnas con los atributos de la clase Pelicula
+        // Configuramos cómo se vinculan las columnas con los atributos de la clase domain.Pelicula
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colAño.setCellValueFactory(new PropertyValueFactory<>("año"));
         colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
 
         // Datos de prueba para que el profesor vea la interfaz funcionando
-        ObservableList<Pelicula> listaPrueba = FXCollections.observableArrayList(
-                new Pelicula(1, "Inception", 2010, 15.50),
-                new Pelicula(2, "The Matrix", 1999, 12.00)
-        );
+        ObservableList<Pelicula> listaPrueba = null;
+        try {
+            listaPrueba = FXCollections.observableArrayList(
+                    new Pelicula("1", 2010,"Inception" , 15.50,new Genero("1","Suspense"),"+12"),
+                    new Pelicula("2",1999 , "The Matrix", 12.00,new Genero("2","Accion"),"+16")
+            );
+        } catch (VideoclubException e) {
+            System.out.println(e.getMessage());
+        }
         tablePeliculas.setItems(listaPrueba);
     }
 

@@ -1,14 +1,16 @@
+package domain;
+
 import exception.VideoclubException;
 
 public class Pelicula {
     private String id_pelicula;
     private int año;
     private String nombre;
-    private int precio;
+    private double precio;
     private Genero genero;
     private String etiqueta;
 
-    public Pelicula(String id_pelicula, int año, String nombre, int precio, Genero genero, String etiqueta) throws VideoclubException {
+    public Pelicula(String id_pelicula, int año, String nombre, double precio, Genero genero, String etiqueta) throws VideoclubException {
         this.id_pelicula = id_pelicula;
         setAño(año);
         this.nombre = nombre;
@@ -37,7 +39,7 @@ public class Pelicula {
         return nombre;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
@@ -48,7 +50,7 @@ public class Pelicula {
         this.año = año;
     }
 
-    public void setPrecio(int precio) throws VideoclubException {
+    public void setPrecio(double precio) throws VideoclubException {
         if (precio < 0){
             throw new VideoclubException("El precio no puede ser negativo");
         }
