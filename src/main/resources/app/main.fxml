@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Main">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Videoclub Ancio - Gestión de Películas" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10">
+        <Button text="Buscar" onAction="#onSearch"/>
+        <Button text="Eliminar" onAction="#onDelete"/>
+    </HBox>
+
+    <TableView fx:id="tablePeliculas" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="200"/>
+            <TableColumn fx:id="colAño" text="Año" prefWidth="100"/>
+            <TableColumn fx:id="colPrecio" text="Precio" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>
