@@ -7,9 +7,9 @@ import java.util.List;
 
 public class PeliculaDAO {
 
-    // REQUISITO: Búsqueda con PreparedStatement (2 campos: nombre y precio) [cite: 21, 69]
     public List<Pelicula> buscar(String nombre, double precioMax) throws SQLException {
         List<Pelicula> lista = new ArrayList<>();
+        // SQL usando tus tablas: pelicula
         String sql = "SELECT * FROM pelicula WHERE nombre LIKE ? AND precio <= ?";
 
         try (Connection conn = ConexionDB.getConnection();
@@ -20,24 +20,25 @@ public class PeliculaDAO {
 
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
-                    // Creamos el objeto Pelicula con los datos de la BD
-                    // Nota: El constructor de Pelicula lanza VideoclubException
                     try {
+                        // Mapeamos las columnas de tu tabla 'pelicula' al objeto Java
                         Pelicula p = new Pelicula(
                                 String.valueOf(rs.getInt("id_pelicula")),
-                                2024, // Para el ejemplo, ya que en SQL pusiste tipo DATE
+                                2024, // El año en tu SQL es DATE, aquí simplificamos a int para tu constructor
                                 rs.getString("nombre"),
                                 rs.getDouble("precio"),
-                                null, ""
+                                null, // Genero (puedes dejarlo null de momento)
+                                ""    // Etiqueta
                         );
                         lista.add(p);
-                    } catch (Exception e) { /* Manejar error de validación */ }
+                    } catch (Exception e) {
+                        System.err.println("Error de validación en película: " + e.getMessage());
+                    }
                 }
             }
         }
         return lista;
     }
-
     // REQUISITO: Transacción con Rollback (Alta de película y su género) [cite: 17, 31, 63]
     public void insertarConGenero(Pelicula p, int idGenero) throws SQLException {
         String sqlPeli = "INSERT INTO pelicula (id_pelicula, nombre, año, precio) VALUES (?, ?, ?, ?)";
