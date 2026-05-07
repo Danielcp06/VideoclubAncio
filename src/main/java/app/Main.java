@@ -1,45 +1,44 @@
 package app;
 
-
-import domain.Genero;
 import domain.Pelicula;
-import domain.PeliculaDAO;
-import exception.VideoclubException;
+import domain.PeliculaDAO; // Importamos el DAO que creamos antes
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-
 import java.sql.SQLException;
 import java.util.List;
 
 public class Main {
 
-
     @FXML private TableView<Pelicula> tablePeliculas;
-    @FXML private TableColumn<Pelicula, Integer> colId;
+    @FXML private TableColumn<Pelicula, String> colId; // Cambiado a String para coincidir con tu clase Pelicula
     @FXML private TableColumn<Pelicula, String> colNombre;
     @FXML private TableColumn<Pelicula, Integer> colAño;
     @FXML private TableColumn<Pelicula, Double> colPrecio;
 
-
     private PeliculaDAO peliDAO = new PeliculaDAO();
 
-    @FXML
-    void main(String[] args) {
+    // Este Metodo se ejecuta SOLO cuando el FXML ya está cargado
+    public void initialize() {
+        colId.setCellValueFactory(new PropertyValueFactory<>("id_pelicula"));
+        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        colAño.setCellValueFactory(new PropertyValueFactory<>("año"));
+        colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
 
-        initialize();
-
+        cargarDatos();
     }
 
-
-
-    // Asegúrate de tener estos @FXML arriba si quieres usarlos para filtrar
-// @FXML private TextField txtNombre;
-// @FXML private TextField txtPrecioMax;
-
-
+    private void cargarDatos() {
+        try {
+            // Ya no usamos datos de prueba, ¡traemos los de la base de datos!
+            List<Pelicula> lista = peliDAO.buscar("", 9999.0);
+            tablePeliculas.setItems(FXCollections.observableArrayList(lista));
+        } catch (SQLException e) {
+            System.out.println("Error al conectar: " + e.getMessage());
+        }
+    }
     @FXML
     private void onSearch() {
         try {
@@ -66,25 +65,6 @@ public class Main {
         }
     }
 
-    public void initialize() {
-        // Configuramos cómo se vinculan las columnas con los atributos de la clase domain.Pelicula
-        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        colAño.setCellValueFactory(new PropertyValueFactory<>("año"));
-        colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
-
-        // Datos de prueba para que el profesor vea la interfaz funcionando
-        ObservableList<Pelicula> listaPrueba = null;
-        try {
-            listaPrueba = FXCollections.observableArrayList(
-                    new Pelicula("1", 2010,"Inception" , 15.50,new Genero("1","Suspense"),"+12"),
-                    new Pelicula("2",1999 , "The Matrix", 12.00,new Genero("2","Accion"),"+16")
-            );
-        } catch (VideoclubException e) {
-            System.out.println(e.getMessage());
-        }
-        tablePeliculas.setItems(listaPrueba);
-    }
 
     @FXML
     private void onDelete() {
