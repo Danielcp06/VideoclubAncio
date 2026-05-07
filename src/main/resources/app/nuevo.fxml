@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.NuevoController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="Añadir Nueva Película" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="ID Película:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtId" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Precio:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="txtPrecio" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Género:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <ComboBox fx:id="comboGenero" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" promptText="Selecciona..."/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Guardar" onAction="#onGuardar" style="-fx-background-color: #99ff99;"/>
+        <Button text="Cancelar" onAction="#onCancelar"/>
+    </HBox>
+</VBox>

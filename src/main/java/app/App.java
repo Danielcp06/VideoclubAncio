@@ -9,10 +9,20 @@ import javafx.stage.Stage;
 public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        // Asegúrate de que la ruta al FXML sea correcta
+        // 1. Cargamos el diseño
         Parent root = FXMLLoader.load(getClass().getResource("/app/main.fxml"));
+
+        // 2. Creamos la escena y la guardamos en una variable "scene"
+        Scene scene = new Scene(root);
+
+        // 3. AÑADIMOS EL CSS (Asegúrate de que el archivo style.css esté en resources/app/)
+        scene.getStylesheets().add(getClass().getResource("/app/style.css").toExternalForm());
+
         primaryStage.setTitle("Videoclub Ancio");
-        primaryStage.setScene(new Scene(root));
+
+        // 4. Le pasamos la escena ya "tuneada" al stage
+        primaryStage.setScene(scene);
+
         primaryStage.show();
     }
 

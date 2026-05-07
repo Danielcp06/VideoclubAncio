@@ -2,11 +2,19 @@ package app;
 
 import domain.Pelicula;
 import domain.PeliculaDAO; // Importamos el DAO que creamos antes
+import exception.VideoclubException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -65,6 +73,34 @@ public class Main {
         }
     }
 
+    @FXML
+    private void onOpenAdd() {
+        try {
+            // Carga la vista del modal para añadir
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/nuevo.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            // Crea una nueva ventana (Stage)
+            scene.getStylesheets().add(getClass().getResource("/app/style.css").toExternalForm());
+
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL); // Hace que sea un modal (bloquea la de atrás)
+            stage.setTitle("Añadir Nueva Película");
+            stage.setScene(scene);
+            stage.show();
+
+            // Muestra la ventana y espera a que se cierre
+            stage.showAndWait();
+
+            // Al cerrar, refrescamos la tabla automáticamente
+            onSearch();
+
+        } catch (IOException e) {
+            System.err.println("Error al abrir el modal de añadir: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     private void onDelete() {
@@ -73,5 +109,45 @@ public class Main {
             Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION, "¿Borrar " + seleccionada.getNombre() + "?");
             confirmacion.showAndWait();
         }
+
+
+    }
+    @FXML
+    private TextField txtBuscar; // El cuadro donde el usuario escribe
+
+    @FXML
+    private void onBuscar() {
+        String texto = txtBuscar.getText();
+
+        if (texto == null || texto.trim().isEmpty()) {
+            onActualizar();
+            return;
+        }
+
+        try {
+            // Intentamos buscar
+            List<Pelicula> resultados = peliDAO.buscarPorNombre(texto);
+            tablePeliculas.setItems(FXCollections.observableArrayList(resultados));
+            System.out.println("Búsqueda finalizada. Encontrados: " + resultados.size());
+
+        } catch (SQLException e) {
+            // Error de SQL normal
+            mostrarError("Error de SQL", e.getMessage());
+        }
+    }
+
+    // Método auxiliar para no repetir código de alertas
+    private void mostrarError(String titulo, String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+    @FXML
+    private void onActualizar() {
+        txtBuscar.clear();
+        // Cambiado cargarDatosTabla() por cargarDatos() que es tu método real
+        cargarDatos();
     }
 }
