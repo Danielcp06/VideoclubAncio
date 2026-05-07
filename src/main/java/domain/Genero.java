@@ -1,3 +1,5 @@
+package domain;
+
 public class Genero {
     private String id_genero;
     private String nombre;
