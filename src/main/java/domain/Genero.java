@@ -1,19 +1,17 @@
 package domain;
 
 public class Genero {
-    private String id_genero;
+    private int id;
     private String nombre;
 
-    public String getId_genero() {
-        return id_genero;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public Genero(String id_genero, String nombre) {
-        this.id_genero = id_genero;
+    public Genero(int id, String nombre) {
+        this.id = id;
         this.nombre = nombre;
     }
+
+    public int getId() { return id; }
+
+    // Este método es el que usa el ComboBox para saber qué texto mostrar
+    @Override
+    public String toString() { return nombre; }
 }
