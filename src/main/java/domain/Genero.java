@@ -11,6 +11,10 @@ public class Genero {
 
     public int getId() { return id; }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     // Este método es el que usa el ComboBox para saber qué texto mostrar
     @Override
     public String toString() { return nombre; }

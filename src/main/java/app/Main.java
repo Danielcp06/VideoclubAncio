@@ -2,7 +2,6 @@ package app;
 
 import domain.Pelicula;
 import domain.PeliculaDAO; // Importamos el DAO que creamos antes
-import exception.VideoclubException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -21,19 +20,21 @@ import java.util.List;
 public class Main {
 
     @FXML private TableView<Pelicula> tablePeliculas;
-    @FXML private TableColumn<Pelicula, String> colId; // Cambiado a String para coincidir con tu clase Pelicula
+
     @FXML private TableColumn<Pelicula, String> colNombre;
     @FXML private TableColumn<Pelicula, Integer> colAño;
-    @FXML private TableColumn<Pelicula, Double> colPrecio;
+    @FXML private TableColumn<Pelicula, String> colGenero;
+    @FXML private TableColumn<Pelicula, Double> colPrecio1;
 
     private PeliculaDAO peliDAO = new PeliculaDAO();
 
     // Este Metodo se ejecuta SOLO cuando el FXML ya está cargado
     public void initialize() {
-        colId.setCellValueFactory(new PropertyValueFactory<>("id_pelicula"));
+
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colAño.setCellValueFactory(new PropertyValueFactory<>("año"));
-        colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
+        colGenero.setCellValueFactory(new PropertyValueFactory<>("nombreGenero"));
+        colPrecio1.setCellValueFactory(new PropertyValueFactory<>("precio"));
 
         cargarDatos();
     }
@@ -88,7 +89,7 @@ public class Main {
             stage.initModality(Modality.APPLICATION_MODAL); // Hace que sea un modal (bloquea la de atrás)
             stage.setTitle("Añadir Nueva Película");
             stage.setScene(scene);
-            stage.show();
+
 
             // Muestra la ventana y espera a que se cierre
             stage.showAndWait();
@@ -103,14 +104,27 @@ public class Main {
     }
 
     @FXML
-    private void onDelete() {
+    private void onEliminar() {
+        // 1. Usamos 'peliculas', que es el nombre de tu TableView
         Pelicula seleccionada = tablePeliculas.getSelectionModel().getSelectedItem();
-        if (seleccionada != null) {
-            Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION, "¿Borrar " + seleccionada.getNombre() + "?");
-            confirmacion.showAndWait();
+
+        if (seleccionada == null) {
+            System.out.println("Por favor, selecciona una película de la tabla.");
+            return;
         }
 
+        try {
+            // 2. Llamamos al DAO (asegúrate de tener peliDAO o dao definido arriba)
+            peliDAO.eliminarPelicula(seleccionada.getId_pelicula());
 
+            // 3. Actualizamos la tabla directamente quitando el objeto
+            tablePeliculas.getItems().remove(seleccionada);
+
+            System.out.println("Película '" + seleccionada.getNombre() + "' eliminada.");
+
+        } catch (SQLException e) {
+            System.err.println("Error al eliminar: " + e.getMessage());
+        }
     }
     @FXML
     private TextField txtBuscar; // El cuadro donde el usuario escribe
@@ -126,7 +140,7 @@ public class Main {
 
         try {
             // Intentamos buscar
-            List<Pelicula> resultados = peliDAO.buscarPorNombre(texto);
+            List<Pelicula> resultados = peliDAO.buscar(texto, 9999.0);
             tablePeliculas.setItems(FXCollections.observableArrayList(resultados));
             System.out.println("Búsqueda finalizada. Encontrados: " + resultados.size());
 

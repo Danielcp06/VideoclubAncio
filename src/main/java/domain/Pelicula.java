@@ -56,4 +56,10 @@ public class Pelicula {
         }
         this.precio = precio;
     }
+
+    private String nombreGenero; // Nuevo campo para el texto del género
+
+    // Añade el getter y setter
+    public String getNombreGenero() { return nombreGenero; }
+    public void setNombreGenero(String nombreGenero) { this.nombreGenero = nombreGenero; }
 }
