@@ -1,36 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Main">
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Main">
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
 
-    <Label text="Videoclub Ancio - Gestión de Películas" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Videoclub Ancio - Gestión de Películas" />
 
-    <HBox spacing="10" alignment="CENTER_LEFT">
+    <HBox alignment="CENTER_LEFT" spacing="10">
 
-        <TextField fx:id="txtBuscar" promptText="Buscar por nombre..." prefWidth="250.0"/>
+        <TextField fx:id="txtBuscar" prefWidth="250.0" promptText="Buscar por nombre..." />
 
-        <Button text="🔍 Buscar" onAction="#onBuscar" styleClass="button-buscar"/>
+        <Button onAction="#onBuscar" styleClass="button-buscar" text="🔍 Buscar" />
 
-        <Button text="🔄 Actualizar" onAction="#onActualizar"/>
+        <Button onAction="#onActualizar" text="🔄 Actualizar" />
 
         <Region HBox.hgrow="ALWAYS" />
 
-        <Button text="+ Añadir" onAction="#onOpenAdd" style="-fx-background-color: #2e7d32; -fx-text-fill: white;"/>
-        <Button text="🗑 Eliminar" onAction="#onDelete" style="-fx-background-color: #d32f2f; -fx-text-fill: white;"/>
+        <Button onAction="#onOpenAdd" style="-fx-background-color: #2e7d32; -fx-text-fill: white;" text="+ Añadir" />
+        <Button onAction="#onEliminar" style="-fx-background-color: #d32f2f; -fx-text-fill: white;" text="🗑 Eliminar" />
     </HBox>
 
     <TableView fx:id="tablePeliculas" VBox.vgrow="ALWAYS">
         <columns>
-            <TableColumn fx:id="colId" text="ID" prefWidth="80"/>
-            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="250"/>
-            <TableColumn fx:id="colAño" text="Año" prefWidth="100"/>
-            <TableColumn fx:id="colPrecio" text="Precio" prefWidth="100"/>
+            <TableColumn fx:id="colNombre" prefWidth="250" text="Nombre" />
+            <TableColumn fx:id="colAño" prefWidth="100" text="Año" />
+            <TableColumn fx:id="colGenero" prefWidth="100" text="Género" />
+         <TableColumn fx:id="colPrecio1" prefWidth="100" text="Precio" />
         </columns>
     </TableView>
 </VBox>
