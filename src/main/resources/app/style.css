@@ -1,0 +1,147 @@
+/* Fondo de la ventana */
+.root {
+    -fx-background-color: #2b2b2b;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* Color de las etiquetas (Labels) */
+.label {
+    -fx-text-fill: #e0e0e0;
+}
+
+/* Estilo de los cuadros de texto */
+.text-field {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: white;
+    -fx-border-color: #646464;
+    -fx-border-radius: 3;
+}
+
+/* Estilo del ComboBox */
+.combo-box {
+    -fx-background-color: #3c3f41;
+}
+.combo-box .list-cell {
+    -fx-text-fill: white;
+}
+
+/* Botón Guardar (Verde oscuro) */
+.button-guardar {
+    -fx-background-color: #2e7d32;
+    -fx-text-fill: white;
+}
+
+/* Botón Cancelar */
+.button-cancelar {
+    -fx-background-color: #d32f2f;
+    -fx-text-fill: white;
+}
+
+/* Esto controla la lista que aparece al abrir el combo */
+.combo-box-popup .list-view {
+    -fx-background-color: #3c3f41;
+    -fx-border-color: #646464;
+}
+
+.combo-box-popup .list-cell {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: white;
+}
+
+/* Color cuando pasas el ratón por encima de un género */
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #4b4d4d;
+}
+/* Fondo general de la tabla */
+.table-view {
+    -fx-background-color: #2b2b2b;
+    -fx-border-color: #444444;
+}
+
+/* Cabeceras de las columnas (ID, Nombre, etc.) */
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: #3c3f41;
+    -fx-border-color: #444444;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #e0e0e0;
+    -fx-font-weight: bold;
+}
+
+/* Celdas y filas */
+.table-row-cell {
+    -fx-background-color: #2b2b2b;
+    -fx-text-fill: white;
+}
+
+/* Filas alternas (para que no sea todo un bloque pegado) */
+.table-row-cell:odd {
+    -fx-background-color: #323232;
+}
+
+/* Color cuando seleccionas una fila */
+.table-row-cell:selected {
+    -fx-background-color: #4b4d4d;
+}
+
+.table-cell {
+    -fx-text-fill: white;
+}
+
+/* Obliga al fondo interno de la tabla a ser oscuro */
+.table-view .virtual-flow {
+    -fx-background-color: #2b2b2b;
+}
+
+/* Quita el borde blanco/azul que sale al hacer clic en la tabla */
+.table-view:focused {
+    -fx-background-color: #2b2b2b;
+}
+
+/* Esto quita el color de fondo de las celdas para que se vea el de la fila */
+.table-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: #3c3f41;
+}
+
+.combo-box .arrow {
+    -fx-background-color: white; /* La flechita será blanca */
+}
+
+
+/* Estilo para el buscador */
+#txtBuscar {
+    -fx-prompt-text-fill: #888888;
+    -fx-highlight-fill: #2e7d32;
+}
+
+/* Puedes hacer que el botón de buscar sea azul para diferenciarlo */
+.button-buscar {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: white;
+}
+
+.scroll-pane {
+    -fx-background-color: #3c3f41;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #3c3f41;
+}
+
+/* El cuadrito del CheckBox */
+.check-box .box {
+    -fx-background-color: #2b2b2b;
+    -fx-border-color: #646464;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #2e7d32; /* Color verde al marcar */
+}
